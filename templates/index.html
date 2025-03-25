@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+        {% if index == 'ol'%}
+            <h2>Список профессий</h2>
+            {% set user_list = list %}
+
+            {% for user in user_list %}
+            <div>{{ loop.index }}.  {{ user }}</div>
+            {% endfor %}
+        {% elif index == 'ul'%}
+            <h2>Список профессий</h2>
+            {% set user_list = list %}
+            {% for user in user_list %}
+            <li>{{ user }}
+            </li>
+            {% endfor %}
+        {% else %}
+            <h2 class="center">Вы ввели неверный запрос</h2>
+        {% endif %}
+    </ul>
+{% endblock %}

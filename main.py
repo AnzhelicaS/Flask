@@ -22,7 +22,8 @@ def list_function(list):
 def answer():
     dict_info = {'Фамилия': 'Watny', 'Имя': 'Mark', 'Образование': 'выше среднего', 'Профессия': 'штурман марсохода',
                  'Пол': 'male', 'Мотивация': 'Всегда мечтал застрять на Марсе!', 'Готовы остаться на Марсе?': 'True'}
-    return render_template('auto_answer.html', dict=dict_info)
+    title = 'Анкета'
+    return render_template('auto_answer.html', title=title, dict=dict_info)
 
 
 if __name__ == '__main__':

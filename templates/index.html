@@ -5,7 +5,6 @@
         {% if index == 'ol'%}
             <h2>Список профессий</h2>
             {% set user_list = list %}
-
             {% for user in user_list %}
             <div>{{ loop.index }}.  {{ user }}</div>
             {% endfor %}

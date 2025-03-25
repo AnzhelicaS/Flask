@@ -17,6 +17,13 @@ def list_function(list):
     return render_template('index.html', index=list, list=list_prof)
 
 
+@app.route('/auto_answer')
+@app.route('/answer')
+def answer():
+    dict_info = {'Фамилия': 'Watny', 'Имя': 'Mark', 'Образование': 'выше среднего', 'Профессия': 'штурман марсохода',
+                 'Пол': 'male', 'Мотивация': 'Всегда мечтал застрять на Марсе!', 'Готовы остаться на Марсе?': 'True'}
+    return render_template('auto_answer.html', dict=dict_info)
+
+
 if __name__ == '__main__':
     app.run(port=5000, host='127.0.0.1')
-

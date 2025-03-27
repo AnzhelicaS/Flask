@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 style="text-align: center">Оформление каюты</h2>
+<table class="table-secondary" style="margin-left: 170px;">
+  <thead>
+    <tr>
+      <th style="text-align: center">Цвет стен</th>
+      <th style="text-align: center">Эмблема</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{% if gender == 'male' %}
+        {% if age >= 21 %} <img class="img" src="{{ url_for('static', filename='img/adult_male_color.png') }}"> {% elif age < 21 %} <img class="img" src="{{ url_for('static', filename='img/kid_male_color.png') }}"> {% endif %}
+        {% elif gender == 'female' %}
+        {% if age >= 21 %} <img class="img" src="{{ url_for('static', filename='img/adult_female_color.png') }}"> {% elif age < 21 %} <img class="img" src="{{ url_for('static', filename='img/kid_female_color.png') }}"> {% endif %}
+        {% endif %}
+      </th>
+      <td>{% if age >= 21 %} <img class="img" src="{{ url_for('static', filename='img/adult_icon.png') }}">
+        {% elif age < 21 %} <img class="img" src="{{ url_for('static', filename='img/kid_icon.png') }}">
+        {% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

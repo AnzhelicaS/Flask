@@ -31,5 +31,11 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/distribution')
+def distribution():
+    people_list = ['Редли Скотт', 'Энди Уир', 'Тони Старк', 'Наташа Романов', 'Стив Роджерс', 'Ник Фьюри']
+    return render_template('distribution.html', people_list=people_list)
+
+
 if __name__ == '__main__':
     app.run(port=5000, host='127.0.0.1')
